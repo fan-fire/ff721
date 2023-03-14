@@ -1,0 +1,10 @@
+{
+  "name": "Token Number 1",
+  "external_url": "https://github.com/fan-fire/ff721",
+  "image": "https://github.com/fan-fire/ff721/raw/main/assets/images/0.jpg",
+  "description": "This is a token number 1",
+  "attributes": [
+    { "trait_type": "Artist", "value": "FanFire" },
+    { "trait_type": "Edition", "value": "The First" }
+  ]
+}

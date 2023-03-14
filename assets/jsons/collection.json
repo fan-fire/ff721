@@ -1,0 +1,7 @@
+{
+  "image": "https://github.com/fan-fire/ff721/raw/main/assets/images/collection.jpg",
+  "description": "Collection of FanFire 721 NFTs",
+  "name": "FanFire 721",
+  "seller_fee_basis_points": "1000",
+  "fee_recipient": "0x25375E1DaFa37a31069d323a37A6f93eaF356123"
+}
