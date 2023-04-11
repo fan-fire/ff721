@@ -6,7 +6,10 @@
   "scripts": {
     "test": "npx hardhat test",
     "lint": "prettier --list-different 'contracts/**/*.sol'",
-    "prettier": "prettier --write 'contracts/**/*.sol'"
+    "prettier": "prettier --write 'contracts/**/*.sol'",
+    "copy-artifacts": "cp -r artifacts/ dapp/artifacts/",
+    "build": "npx hardhat compile && npm run copy-artifacts",
+    "start": "npm run build && cd dapp && live-server ."
   },
   "repository": {
     "type": "git",
