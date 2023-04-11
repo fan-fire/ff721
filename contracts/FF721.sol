@@ -1,127 +1,150 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.17;
-
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/interfaces/IERC2981.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
-import "@openzeppelin/contracts/access/AccessControl.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "./IFF721.sol";
+pragma solidity ^0.8.18 .0;
+import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import {ERC721URIStorage} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import {ERC721Burnable} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
+import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
+import {Counters} from "@openzeppelin/contracts/utils/Counters.sol";
+import {IFF721} from "./IFF721.sol";
 
 contract FF721 is
     IFF721,
-    Ownable,
-    AccessControl,
     ERC721,
     ERC721URIStorage,
-    ERC721Burnable
+    ERC721Burnable,
+    AccessControl
 {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIdCounter;
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
-    bytes32 public constant UPDATER_ROLE = keccak256("UPDATER_ROLE");
-
-    using Counters for Counters.Counter;
-    using Strings for uint256;
+    bytes32 public constant SETTER_ROLE = keccak256("SETTER_ROLE");
 
     string private constant _name = "FanFire 721";
     string private constant _symbol = "FF721";
     string private _baseTokenURI =
-        "https://ipfs.fanfire.ai/ipfs/QmXwJUyhwM1MLURNLcptnKq3hgP8nHVunRKYXRg4ZhZdK2/";
+        "https://raw.githubusercontent.com/fan-fire/ff721/main/assets/jsons/";
     string private _contractURI =
-        "https://ipfs.fanfire.ai/ipfs/QmXwJUyhwM1MLURNLcptnKq3hgP8nHVunRKYXRg4ZhZdK2/collection.json";
+        "https://raw.githubusercontent.com/fan-fire/ff721/main/assets/jsons/collection.json";
     address private _royaltyReceiver =
         0xFdD72142CA8cE7dC492cDe17557c16d8cbc17c1B;
     uint256 private _royaltyBasisPoint = 1000;
 
-    Counters.Counter private _tokenIdCounter;
-
     constructor() ERC721(_name, _symbol) {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _grantRole(MINTER_ROLE, msg.sender);
-        _grantRole(BURNER_ROLE, msg.sender);
-        _grantRole(UPDATER_ROLE, msg.sender);
     }
 
-    function getTokenIdCounter() public view returns (uint256) {
-        return _tokenIdCounter.current();
-    }
-
-    function selfDestruct(address adr) public onlyOwner {
-        selfdestruct(payable(adr));
-    }
-
-    function safeMint(
-        address to,
-        string memory uri
-    ) public onlyRole(MINTER_ROLE) {
+    /**
+     * @dev See {IFF721-mint}.
+     */
+    function mint(address to, string memory uri) public onlyRole(MINTER_ROLE) {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
     }
 
+    /**
+     * @dev See {IFF721-burn}.
+     */
     function burn(
         uint256 tokenId
-    ) public override(ERC721Burnable) onlyRole(BURNER_ROLE) {
-        // require(_isApprovedOrOwner(_msgSender(), tokenId), "ERC721Burnable: caller is not owner nor approved");
+    ) public override(ERC721Burnable, IFF721) onlyRole(BURNER_ROLE) {
         _burn(tokenId);
     }
 
-    // The following function overrides required by Solidity.
-    function _burn(
-        uint256 tokenId
-    ) internal override(ERC721, ERC721URIStorage) {
-        super._burn(tokenId);
+    /**
+     * @dev See {IFF721-setRoyalties}.
+     */
+    function setRoyalties(
+        address newRecipient,
+        uint256 newBasisPoints
+    ) external onlyRole(SETTER_ROLE) {
+        _setRoyalties(newRecipient, newBasisPoints);
     }
 
-    function updateBaseTokenURI(
-        string memory uri
-    ) public onlyRole(UPDATER_ROLE) {
+    /**
+     * @dev See {IFF721-setBaseTokenURI}.
+     *
+     * emits {IFF721-BaseTokenURIChanged} event
+     */
+    function setBaseTokenURI(string memory uri) public onlyRole(SETTER_ROLE) {
         _baseTokenURI = uri;
+
+        emit BaseTokenURIChanged(uri);
     }
 
-    function updateContractURI(
-        string memory uri
-    ) public onlyRole(UPDATER_ROLE) {
+    /**
+     * @dev See {IFF721-setContractURI}.
+     *
+     * emits {IFF721-ContractURIChanged} event
+     */
+    function setContractURI(string memory uri) public onlyRole(SETTER_ROLE) {
         _contractURI = uri;
+        emit ContractURIChanged(uri);
     }
 
-    function updateTokenURI(
+    /**
+     * @dev See {IFF721-setTokenURI}.
+     *
+     * emits {IFF721-TokenURIChanged} event
+     */
+    function setTokenURI(
         uint256 tokenId,
-        string memory _tokenURI
-    ) public onlyRole(UPDATER_ROLE) {
-        _setTokenURI(tokenId, _tokenURI);
+        string memory uri
+    ) public onlyRole(SETTER_ROLE) {
+        _setTokenURI(tokenId, uri);
+        emit TokenURIChanged(tokenId, uri);
     }
 
+    /**
+     * @dev See {IFF721-setTokenURI}.
+     */
     function tokenURI(
         uint256 tokenId
     )
         public
         view
-        override(ERC721, ERC721URIStorage, IFF721)
+        override(ERC721, ERC721URIStorage, IERC721Metadata)
         returns (string memory)
     {
         return super.tokenURI(tokenId);
     }
 
+    /**
+     * Override ERC721URIStorage._baseURI() to return the base token URI
+     */
     function _baseURI() internal view override returns (string memory) {
         return _baseTokenURI;
     }
 
-    // Required by opensea according to https://docs.opensea.io/docs/1-structuring-your-smart-contract
+    /**
+     * Required by opensea according to https://docs.opensea.io/docs/1-structuring-your-smart-contract
+     */
     function baseTokenURI() public view returns (string memory) {
         return _baseTokenURI;
     }
 
-    // Required by opensea for storefront metadata https://docs.opensea.io/docs/contract-level-metadata
+    /**
+     * Required by opensea for storefront metadata https://docs.opensea.io/docs/contract-level-metadata
+     */
     function contractURI() public view returns (string memory) {
         return _contractURI;
     }
 
-    // EIP2981 standard royalties return.
+    /**
+     *
+     * @dev EIP2981 royalty standard
+     *
+     * Currently we are not setting royalties to on a per tokenId basis, but
+     * rather on a per contract basis.
+     *
+     * @param _tokenId - token id of which to get royalty info
+     * @param _salePrice - sale price that the royalty is being calculated for
+     * @return receiver - address of the royalty receiver for this token
+     * @return royaltyAmount - amount of royalty to be paid
+     */
     function royaltyInfo(
         uint256 _tokenId,
         uint256 _salePrice
@@ -132,27 +155,16 @@ contract FF721 is
         );
     }
 
-    // Maintain flexibility to modify royalties recipient (could also add basis points).
-    function _setRoyalties(
-        address newRecipient,
-        uint256 newBasisPoints
-    ) internal {
-        require(
-            newRecipient != address(0),
-            "Royalties: new recipient is the zero address"
-        );
-        _royaltyReceiver = newRecipient;
-        _royaltyBasisPoint = newBasisPoints;
+    /**
+     * @dev Returns the current token id counter. I.e. the next token id minted
+     */
+    function currentTokenId() public view returns (uint256) {
+        return _tokenIdCounter.current();
     }
 
-    function setRoyalties(
-        address newRecipient,
-        uint256 newBasisPoints
-    ) external onlyOwner {
-        _setRoyalties(newRecipient, newBasisPoints);
-    }
-
-    // EIP2981 standard Interface return.
+    /**
+     * @dev See {IERC165-supportsInterface}.
+     */
     function supportsInterface(
         bytes4 interfaceId
     )
@@ -167,7 +179,34 @@ contract FF721 is
             interfaceId == type(IERC165).interfaceId ||
             interfaceId == type(IAccessControl).interfaceId ||
             interfaceId == type(IFF721).interfaceId ||
-            interfaceId == 0x000ff721 ||
             super.supportsInterface(interfaceId));
+    }
+
+    // The following functions are overrides required by Solidity.
+    function _burn(
+        uint256 tokenId
+    ) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
+    }
+
+    /**
+     * @dev Internal function to set the royalties for this contract
+     *
+     * @param newRecipient - address of the new royalty receiver
+     * @param newBasisPoints - basis points of the new royalty amount
+     *
+     * Emits a {RoyaltiesSet} event.
+     */
+    function _setRoyalties(
+        address newRecipient,
+        uint256 newBasisPoints
+    ) internal {
+        require(
+            newRecipient != address(0),
+            "Royalties: new recipient is the zero address"
+        );
+        _royaltyReceiver = newRecipient;
+        _royaltyBasisPoint = newBasisPoints;
+        emit RoyaltiesSet(newRecipient, newBasisPoints);
     }
 }

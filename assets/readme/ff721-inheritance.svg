@@ -1,0 +1,265 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="930pt" height="404pt" viewBox="0.00 0.00 930.11 404.00">
+<g id="graph0" class="graph" transform="translate(63.58442099584465,390.7797673166222) scale(0.8407027065413736)" data-name="G">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-400 926.11,-400 926.11,4 -4,4" style=""/>
+<!-- FF721 -->
+<g id="node1" class="node" pointer-events="visible" data-name="FF721">
+
+<ellipse fill="none" stroke="black" cx="315.21" cy="-378" rx="36.03" ry="18" style=""/>
+<text text-anchor="middle" x="315.21" y="-373.8" font-family="Times,serif" font-size="14.00" style="">FF721</text>
+</g>
+<!-- IFF721 -->
+<g id="node2" class="node" pointer-events="visible" data-name="IFF721">
+
+<ellipse fill="none" stroke="black" cx="72.21" cy="-234" rx="39.46" ry="18" style=""/>
+<text text-anchor="middle" x="72.21" y="-229.8" font-family="Times,serif" font-size="14.00" style="">IFF721</text>
+</g>
+<!-- FF721&#45;&gt;IFF721 -->
+<g id="edge1" class="edge" data-name="FF721-&gt;IFF721">
+
+<path fill="none" stroke="black" d="M280.37,-372.75C225.91,-365.43 124.13,-348.79 98.21,-324 81.92,-308.43 75.67,-283.28 73.35,-263.69" style=""/>
+<polygon fill="black" stroke="black" points="76.85,-263.5 72.49,-253.84 69.88,-264.11 76.85,-263.5" style=""/>
+</g>
+<!-- ERC721 -->
+<g id="node3" class="node" pointer-events="visible" data-name="ERC721">
+
+<ellipse fill="none" stroke="black" cx="255.21" cy="-234" rx="44.11" ry="18" style=""/>
+<text text-anchor="middle" x="255.21" y="-229.8" font-family="Times,serif" font-size="14.00" style="">ERC721</text>
+</g>
+<!-- FF721&#45;&gt;ERC721 -->
+<g id="edge2" class="edge" data-name="FF721-&gt;ERC721">
+
+<path fill="none" stroke="black" d="M313.8,-359.55C311.78,-341.06 307.04,-311.36 296.21,-288 291.53,-277.93 284.64,-267.99 277.84,-259.5" style=""/>
+<polygon fill="black" stroke="black" points="280.7,-257.46 271.58,-252.07 275.34,-261.97 280.7,-257.46" style=""/>
+</g>
+<!-- ERC721URIStorage -->
+<g id="node4" class="node" pointer-events="visible" data-name="ERC721URIStorage">
+
+<ellipse fill="none" stroke="black" cx="197.21" cy="-306" rx="90.37" ry="18" style=""/>
+<text text-anchor="middle" x="197.21" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC721URIStorage</text>
+</g>
+<!-- FF721&#45;&gt;ERC721URIStorage -->
+<g id="edge3" class="edge" data-name="FF721-&gt;ERC721URIStorage">
+
+<path fill="none" stroke="black" d="M292.73,-363.67C276.41,-353.98 253.93,-340.65 234.89,-329.35" style=""/>
+<polygon fill="black" stroke="black" points="236.69,-326.35 226.3,-324.26 233.12,-332.37 236.69,-326.35" style=""/>
+</g>
+<!-- ERC721Burnable -->
+<g id="node5" class="node" pointer-events="visible" data-name="ERC721Burnable">
+
+<ellipse fill="none" stroke="black" cx="423.21" cy="-306" rx="79.9" ry="18" style=""/>
+<text text-anchor="middle" x="423.21" y="-301.8" font-family="Times,serif" font-size="14.00" style="">ERC721Burnable</text>
+</g>
+<!-- FF721&#45;&gt;ERC721Burnable -->
+<g id="edge4" class="edge" data-name="FF721-&gt;ERC721Burnable">
+
+<path fill="none" stroke="black" d="M336.54,-363.17C351.24,-353.64 371.11,-340.77 388.11,-329.75" style=""/>
+<polygon fill="black" stroke="black" points="389.98,-332.71 396.46,-324.33 386.17,-326.84 389.98,-332.71" style=""/>
+</g>
+<!-- AccessControl -->
+<g id="node6" class="node" pointer-events="visible" data-name="AccessControl">
+
+<ellipse fill="none" stroke="black" cx="533.21" cy="-234" rx="67.79" ry="18" style=""/>
+<text text-anchor="middle" x="533.21" y="-229.8" font-family="Times,serif" font-size="14.00" style="">AccessControl</text>
+</g>
+<!-- FF721&#45;&gt;AccessControl -->
+<g id="edge5" class="edge" data-name="FF721-&gt;AccessControl">
+
+<path fill="none" stroke="black" d="M342.62,-366C348.38,-363.87 354.46,-361.76 360.21,-360 426.59,-339.69 463.14,-373.11 512.21,-324 527.91,-308.28 532.72,-283.15 533.85,-263.6" style=""/>
+<polygon fill="black" stroke="black" points="537.35,-263.88 534.11,-253.79 530.35,-263.69 537.35,-263.88" style=""/>
+</g>
+<!-- IERC721 -->
+<g id="node9" class="node" pointer-events="visible" data-name="IERC721">
+
+<ellipse fill="none" stroke="black" cx="189.21" cy="-90" rx="47.54" ry="18" style=""/>
+<text text-anchor="middle" x="189.21" y="-85.8" font-family="Times,serif" font-size="14.00" style="">IERC721</text>
+</g>
+<!-- IFF721&#45;&gt;IERC721 -->
+<g id="edge22" class="edge" data-name="IFF721-&gt;IERC721">
+
+<path fill="none" stroke="black" d="M71.77,-215.52C72.16,-196.18 75.49,-164.99 91.21,-144 103.96,-126.96 123.85,-114.78 142.39,-106.43" style=""/>
+<polygon fill="black" stroke="black" points="143.53,-109.75 151.4,-102.65 140.82,-103.29 143.53,-109.75" style=""/>
+</g>
+<!-- IERC721Metadata -->
+<g id="node10" class="node" pointer-events="visible" data-name="IERC721Metadata">
+
+<ellipse fill="none" stroke="black" cx="183.21" cy="-162" rx="83.39" ry="18" style=""/>
+<text text-anchor="middle" x="183.21" y="-157.8" font-family="Times,serif" font-size="14.00" style="">IERC721Metadata</text>
+</g>
+<!-- IFF721&#45;&gt;IERC721Metadata -->
+<g id="edge24" class="edge" data-name="IFF721-&gt;IERC721Metadata">
+
+<path fill="none" stroke="black" d="M94.67,-218.83C109.96,-209.19 130.5,-196.24 147.95,-185.23" style=""/>
+<polygon fill="black" stroke="black" points="149.4,-188.46 155.99,-180.16 145.67,-182.54 149.4,-188.46" style=""/>
+</g>
+<!-- IERC165 -->
+<g id="node11" class="node" pointer-events="visible" data-name="IERC165">
+
+<ellipse fill="none" stroke="black" cx="130.21" cy="-18" rx="47.54" ry="18" style=""/>
+<text text-anchor="middle" x="130.21" y="-13.8" font-family="Times,serif" font-size="14.00" style="">IERC165</text>
+</g>
+<!-- IFF721&#45;&gt;IERC165 -->
+<g id="edge21" class="edge" data-name="IFF721-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M57.06,-217.35C29.91,-187.35 -21.35,-120.43 10.21,-72 24.87,-49.5 51.49,-36.48 75.94,-28.98" style=""/>
+<polygon fill="black" stroke="black" points="76.82,-32.37 85.51,-26.32 74.94,-25.63 76.82,-32.37" style=""/>
+</g>
+<!-- IERC2981 -->
+<g id="node16" class="node" pointer-events="visible" data-name="IERC2981">
+
+<ellipse fill="none" stroke="black" cx="71.21" cy="-90" rx="52.2" ry="18" style=""/>
+<text text-anchor="middle" x="71.21" y="-85.8" font-family="Times,serif" font-size="14.00" style="">IERC2981</text>
+</g>
+<!-- IFF721&#45;&gt;IERC2981 -->
+<g id="edge23" class="edge" data-name="IFF721-&gt;IERC2981">
+
+<path fill="none" stroke="black" d="M66.53,-216.04C63.38,-205.74 59.8,-192.27 58.21,-180 56.15,-164.13 56.29,-159.88 58.21,-144 59.2,-135.78 61.03,-127.01 63.01,-119" style=""/>
+<polygon fill="black" stroke="black" points="66.36,-120.02 65.54,-109.46 59.59,-118.22 66.36,-120.02" style=""/>
+</g>
+<!-- Context -->
+<g id="node7" class="node" pointer-events="visible" data-name="Context">
+
+<ellipse fill="none" stroke="black" cx="364.21" cy="-162" rx="41.73" ry="18" style=""/>
+<text text-anchor="middle" x="364.21" y="-157.8" font-family="Times,serif" font-size="14.00" style="">Context</text>
+</g>
+<!-- ERC721&#45;&gt;Context -->
+<g id="edge6" class="edge" data-name="ERC721-&gt;Context">
+
+<path fill="none" stroke="black" d="M278.06,-218.33C293.86,-208.18 315.09,-194.54 332.52,-183.35" style=""/>
+<polygon fill="black" stroke="black" points="333.96,-186.58 340.49,-178.23 330.18,-180.69 333.96,-186.58" style=""/>
+</g>
+<!-- ERC165 -->
+<g id="node8" class="node" pointer-events="visible" data-name="ERC165">
+
+<ellipse fill="none" stroke="black" cx="468.21" cy="-162" rx="44.11" ry="18" style=""/>
+<text text-anchor="middle" x="468.21" y="-157.8" font-family="Times,serif" font-size="14.00" style="">ERC165</text>
+</g>
+<!-- ERC721&#45;&gt;ERC165 -->
+<g id="edge7" class="edge" data-name="ERC721-&gt;ERC165">
+
+<path fill="none" stroke="black" d="M288.96,-221.91C325.41,-209.93 383.65,-190.79 423.8,-177.59" style=""/>
+<polygon fill="black" stroke="black" points="424.77,-180.96 433.18,-174.51 422.58,-174.31 424.77,-180.96" style=""/>
+</g>
+<!-- ERC721&#45;&gt;IERC721 -->
+<g id="edge8" class="edge" data-name="ERC721-&gt;IERC721">
+
+<path fill="none" stroke="black" d="M265.64,-216.25C275.81,-197.56 288.02,-166.95 275.21,-144 266.16,-127.8 249.9,-115.93 233.93,-107.59" style=""/>
+<polygon fill="black" stroke="black" points="235.45,-104.44 224.92,-103.26 232.42,-110.75 235.45,-104.44" style=""/>
+</g>
+<!-- ERC721&#45;&gt;IERC721Metadata -->
+<g id="edge9" class="edge" data-name="ERC721-&gt;IERC721Metadata">
+
+<path fill="none" stroke="black" d="M238.87,-217.12C229.99,-208.48 218.8,-197.61 208.79,-187.88" style=""/>
+<polygon fill="black" stroke="black" points="211.43,-185.56 201.82,-181.1 206.55,-190.58 211.43,-185.56" style=""/>
+</g>
+<!-- ERC721URIStorage&#45;&gt;ERC721 -->
+<g id="edge14" class="edge" data-name="ERC721URIStorage-&gt;ERC721">
+
+<path fill="none" stroke="black" d="M211.25,-288.05C218.19,-279.68 226.7,-269.4 234.38,-260.13" style=""/>
+<polygon fill="black" stroke="black" points="237.04,-262.41 240.73,-252.47 231.65,-257.94 237.04,-262.41" style=""/>
+</g>
+<!-- ERC721Burnable&#45;&gt;ERC721 -->
+<g id="edge16" class="edge" data-name="ERC721Burnable-&gt;ERC721">
+
+<path fill="none" stroke="black" d="M386.34,-289.64C359.56,-278.48 323.34,-263.39 295.75,-251.89" style=""/>
+<polygon fill="black" stroke="black" points="297.24,-248.72 286.66,-248.11 294.55,-255.18 297.24,-248.72" style=""/>
+</g>
+<!-- ERC721Burnable&#45;&gt;Context -->
+<g id="edge15" class="edge" data-name="ERC721Burnable-&gt;Context">
+
+<path fill="none" stroke="black" d="M425.79,-287.74C427.79,-269.14 428.68,-239.12 418.21,-216 412.85,-204.18 403.59,-193.59 394.24,-185.05" style=""/>
+<polygon fill="black" stroke="black" points="396.76,-182.6 386.88,-178.78 392.22,-187.93 396.76,-182.6" style=""/>
+</g>
+<!-- AccessControl&#45;&gt;Context -->
+<g id="edge17" class="edge" data-name="AccessControl-&gt;Context">
+
+<path fill="none" stroke="black" d="M497.78,-218.33C470.4,-206.99 432.5,-191.29 404.07,-179.51" style=""/>
+<polygon fill="black" stroke="black" points="405.65,-176.38 395.07,-175.79 402.97,-182.85 405.65,-176.38" style=""/>
+</g>
+<!-- AccessControl&#45;&gt;ERC165 -->
+<g id="edge19" class="edge" data-name="AccessControl-&gt;ERC165">
+
+<path fill="none" stroke="black" d="M517.47,-216.05C509.53,-207.5 499.75,-196.97 491.01,-187.56" style=""/>
+<polygon fill="black" stroke="black" points="493.75,-185.36 484.38,-180.42 488.62,-190.13 493.75,-185.36" style=""/>
+</g>
+<!-- IAccessControl -->
+<g id="node17" class="node" pointer-events="visible" data-name="IAccessControl">
+
+<ellipse fill="none" stroke="black" cx="601.21" cy="-162" rx="71.22" ry="18" style=""/>
+<text text-anchor="middle" x="601.21" y="-157.8" font-family="Times,serif" font-size="14.00" style="">IAccessControl</text>
+</g>
+<!-- AccessControl&#45;&gt;IAccessControl -->
+<g id="edge18" class="edge" data-name="AccessControl-&gt;IAccessControl">
+
+<path fill="none" stroke="black" d="M549.67,-216.05C557.85,-207.63 567.91,-197.28 576.95,-187.97" style=""/>
+<polygon fill="black" stroke="black" points="579.38,-190.49 583.84,-180.87 574.36,-185.61 579.38,-190.49" style=""/>
+</g>
+<!-- ERC165&#45;&gt;IERC165 -->
+<g id="edge12" class="edge" data-name="ERC165-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M438.21,-148.4C377.63,-122.95 240.6,-65.38 171.58,-36.38" style=""/>
+<polygon fill="black" stroke="black" points="173.08,-33.22 162.5,-32.57 170.37,-39.67 173.08,-33.22" style=""/>
+</g>
+<!-- IERC721&#45;&gt;IERC165 -->
+<g id="edge10" class="edge" data-name="IERC721-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M175.22,-72.41C168.1,-63.95 159.28,-53.49 151.34,-44.08" style=""/>
+<polygon fill="black" stroke="black" points="154.18,-42.02 145.06,-36.63 148.83,-46.53 154.18,-42.02" style=""/>
+</g>
+<!-- IERC721Metadata&#45;&gt;IERC721 -->
+<g id="edge11" class="edge" data-name="IERC721Metadata-&gt;IERC721">
+
+<path fill="none" stroke="black" d="M184.69,-143.7C185.31,-136.41 186.06,-127.73 186.76,-119.54" style=""/>
+<polygon fill="black" stroke="black" points="190.24,-119.87 187.61,-109.61 183.27,-119.28 190.24,-119.87" style=""/>
+</g>
+<!-- IERC721Receiver -->
+<g id="node12" class="node" pointer-events="visible" data-name="IERC721Receiver">
+
+<ellipse fill="none" stroke="black" cx="451.21" cy="-378" rx="81.66" ry="18" style=""/>
+<text text-anchor="middle" x="451.21" y="-373.8" font-family="Times,serif" font-size="14.00" style="">IERC721Receiver</text>
+</g>
+<!-- Address -->
+<g id="node13" class="node" pointer-events="visible" data-name="Address">
+
+<ellipse fill="none" stroke="black" cx="594.21" cy="-378" rx="42.87" ry="18" style=""/>
+<text text-anchor="middle" x="594.21" y="-373.8" font-family="Times,serif" font-size="14.00" style="">Address</text>
+</g>
+<!-- Strings -->
+<g id="node14" class="node" pointer-events="visible" data-name="Strings">
+
+<ellipse fill="none" stroke="black" cx="693.21" cy="-378" rx="38.31" ry="18" style=""/>
+<text text-anchor="middle" x="693.21" y="-373.8" font-family="Times,serif" font-size="14.00" style="">Strings</text>
+</g>
+<!-- Math -->
+<g id="node15" class="node" pointer-events="visible" data-name="Math">
+
+<ellipse fill="none" stroke="black" cx="781.21" cy="-378" rx="31.34" ry="18" style=""/>
+<text text-anchor="middle" x="781.21" y="-373.8" font-family="Times,serif" font-size="14.00" style="">Math</text>
+</g>
+<!-- IERC2981&#45;&gt;IERC165 -->
+<g id="edge13" class="edge" data-name="IERC2981-&gt;IERC165">
+
+<path fill="none" stroke="black" d="M85.19,-72.41C92.32,-63.95 101.13,-53.49 109.07,-44.08" style=""/>
+<polygon fill="black" stroke="black" points="111.58,-46.53 115.35,-36.63 106.23,-42.02 111.58,-46.53" style=""/>
+</g>
+<!-- Ownable -->
+<g id="node18" class="node" pointer-events="visible" data-name="Ownable">
+
+<ellipse fill="none" stroke="black" cx="363.21" cy="-234" rx="45.79" ry="18" style=""/>
+<text text-anchor="middle" x="363.21" y="-229.8" font-family="Times,serif" font-size="14.00" style="">Ownable</text>
+</g>
+<!-- Ownable&#45;&gt;Context -->
+<g id="edge20" class="edge" data-name="Ownable-&gt;Context">
+
+<path fill="none" stroke="black" d="M363.45,-215.7C363.56,-208.41 363.68,-199.73 363.8,-191.54" style=""/>
+<polygon fill="black" stroke="black" points="367.3,-191.67 363.94,-181.62 360.3,-191.57 367.3,-191.67" style=""/>
+</g>
+<!-- Counters -->
+<g id="node19" class="node" pointer-events="visible" data-name="Counters">
+
+<ellipse fill="none" stroke="black" cx="876.21" cy="-378" rx="45.81" ry="18" style=""/>
+<text text-anchor="middle" x="876.21" y="-373.8" font-family="Times,serif" font-size="14.00" style="">Counters</text>
+</g>
+</g>
+</svg>
