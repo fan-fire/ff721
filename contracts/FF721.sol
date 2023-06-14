@@ -11,13 +11,15 @@ import {IERC721Metadata} from "@openzeppelin/contracts/token/ERC721/extensions/I
 import {IERC2981} from "@openzeppelin/contracts/interfaces/IERC2981.sol";
 import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 import {IFF721} from "./IFF721.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract FF721 is
     IFF721,
     ERC721,
     ERC721URIStorage,
     ERC721Burnable,
-    AccessControl
+    AccessControl,
+    Ownable
 {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
@@ -78,6 +80,8 @@ contract FF721 is
         _baseTokenURI = uri;
 
         emit BaseTokenURIChanged(uri);
+        // from ERC-4906
+        emit BatchMetadataUpdate(0, type(uint256).max);
     }
 
     /**

@@ -18,6 +18,9 @@ interface IFF721 is IERC165, IERC721, IERC2981, IERC721Metadata {
 
     event TokenURIChanged(uint256 indexed tokenId, string newTokenURI);
 
+    // ERC-4906 events to update OpenSea when updating baseTokenURI
+    event BatchMetadataUpdate(uint256 _fromTokenId, uint256 _toTokenId);
+
     /**
      * Minting method for the FanFire 721 contract.
      *
